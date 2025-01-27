@@ -1,0 +1,63 @@
+$date
+	Sun Jan 26 22:34:15 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Counter_tb $end
+$var wire 32 ! count [31:0] $end
+$var reg 1 " clk $end
+$var reg 32 # count_next [31:0] $end
+$var reg 1 $ rst $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 32 % count_next [31:0] $end
+$var wire 1 $ rst $end
+$var reg 32 & count [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx &
+b0 %
+1$
+b0 #
+0"
+bx !
+$end
+#5
+b0 !
+b0 &
+1"
+#10
+0"
+b100011000000000001 #
+b100011000000000001 %
+#15
+b100011000000000001 !
+b100011000000000001 &
+1"
+#20
+0"
+b11001000110000000000000 #
+b11001000110000000000000 %
+#25
+b11001000110000000000000 !
+b11001000110000000000000 &
+1"
+#30
+0"
+0$
+#35
+b0 !
+b0 &
+1"
+#40
+0"

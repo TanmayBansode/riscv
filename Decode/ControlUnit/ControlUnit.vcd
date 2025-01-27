@@ -1,0 +1,332 @@
+$date
+	Mon Jan 27 08:48:47 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module ControlUnit_tb $end
+$var wire 1 ! ResultSrc $end
+$var wire 1 " RegWrite $end
+$var wire 1 # MemWrite $end
+$var wire 2 $ ImmSrc [1:0] $end
+$var wire 1 % Branch $end
+$var wire 1 & ALUSrc $end
+$var wire 3 ' ALUControl [2:0] $end
+$var reg 7 ( Op [6:0] $end
+$var reg 3 ) funct3 [2:0] $end
+$var reg 7 * funct7 [6:0] $end
+$scope module dut $end
+$var wire 7 + Op [6:0] $end
+$var wire 3 , funct3 [2:0] $end
+$var wire 7 - funct7 [6:0] $end
+$var wire 1 ! ResultSrc $end
+$var wire 1 " RegWrite $end
+$var wire 1 # MemWrite $end
+$var wire 2 . ImmSrc [1:0] $end
+$var wire 1 % Branch $end
+$var wire 1 & ALUSrc $end
+$var wire 2 / ALUOp [1:0] $end
+$var wire 3 0 ALUControl [2:0] $end
+$scope module ALUDecoder $end
+$var wire 3 1 funct3 [2:0] $end
+$var wire 7 2 funct7 [6:0] $end
+$var wire 7 3 op [6:0] $end
+$var wire 2 4 ALUOp [1:0] $end
+$var wire 3 5 ALUControl [2:0] $end
+$upscope $end
+$scope module MainDecoder $end
+$var wire 7 6 Op [6:0] $end
+$var wire 1 ! ResultSrc $end
+$var wire 1 " RegWrite $end
+$var wire 1 # MemWrite $end
+$var wire 2 7 ImmSrc [1:0] $end
+$var wire 1 % Branch $end
+$var wire 1 & ALUSrc $end
+$var wire 2 8 ALUOp [1:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 8
+b0 7
+b11 6
+b0 5
+b0 4
+b11 3
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+b0 -
+b0 ,
+b11 +
+b0 *
+b0 )
+b11 (
+b0 '
+1&
+0%
+b0 $
+0#
+1"
+1!
+$end
+#10
+0&
+0!
+b10 /
+b10 4
+b10 8
+b110011 (
+b110011 +
+b110011 3
+b110011 6
+#20
+1&
+b0 /
+b0 4
+b0 8
+b10011 (
+b10011 +
+b10011 3
+b10011 6
+#30
+0"
+1&
+b1 $
+b1 .
+b1 7
+1#
+b100011 (
+b100011 +
+b100011 3
+b100011 6
+#40
+b1 '
+b1 0
+b1 5
+0&
+b1 /
+b1 4
+b1 8
+b10 $
+b10 .
+b10 7
+0#
+1%
+b1100011 (
+b1100011 +
+b1100011 3
+b1100011 6
+#50
+1"
+1&
+b0 '
+b0 0
+b0 5
+b0 $
+b0 .
+b0 7
+b0 /
+b0 4
+b0 8
+1!
+0%
+b11 (
+b11 +
+b11 3
+b11 6
+#60
+0"
+b1 $
+b1 .
+b1 7
+1#
+0!
+b100011 (
+b100011 +
+b100011 3
+b100011 6
+#70
+1"
+b0 $
+b0 .
+b0 7
+0#
+b10011 (
+b10011 +
+b10011 3
+b10011 6
+#80
+0"
+1&
+b1 $
+b1 .
+b1 7
+1#
+b100011 (
+b100011 +
+b100011 3
+b100011 6
+#90
+1"
+b0 $
+b0 .
+b0 7
+0#
+1!
+b11 (
+b11 +
+b11 3
+b11 6
+#100
+b1 '
+b1 0
+b1 5
+0"
+0&
+b10 $
+b10 .
+b10 7
+b1 /
+b1 4
+b1 8
+0!
+1%
+b1100011 (
+b1100011 +
+b1100011 3
+b1100011 6
+#110
+1"
+b0 '
+b0 0
+b0 5
+b0 $
+b0 .
+b0 7
+0%
+b10 /
+b10 4
+b10 8
+b110011 (
+b110011 +
+b110011 3
+b110011 6
+#120
+0"
+b1 '
+b1 0
+b1 5
+b10 $
+b10 .
+b10 7
+1%
+b1 /
+b1 4
+b1 8
+b1100011 (
+b1100011 +
+b1100011 3
+b1100011 6
+#170
+b0 '
+b0 0
+b0 5
+b0 $
+b0 .
+b0 7
+b0 /
+b0 4
+b0 8
+0%
+b0 (
+b0 +
+b0 3
+b0 6
+#180
+b1 '
+b1 0
+b1 5
+b10 $
+b10 .
+b10 7
+b1 /
+b1 4
+b1 8
+1%
+b1100011 (
+b1100011 +
+b1100011 3
+b1100011 6
+#190
+1"
+b1 '
+b1 0
+b1 5
+b0 $
+b0 .
+b0 7
+0%
+b10 /
+b10 4
+b10 8
+b100000 *
+b100000 -
+b100000 2
+b110011 (
+b110011 +
+b110011 3
+b110011 6
+#200
+1&
+b0 '
+b0 0
+b0 5
+b0 /
+b0 4
+b0 8
+b10011 (
+b10011 +
+b10011 3
+b10011 6
+#210
+b101 '
+b101 0
+b101 5
+1"
+0&
+b10 /
+b10 4
+b10 8
+b10 )
+b10 ,
+b10 1
+b110011 (
+b110011 +
+b110011 3
+b110011 6
+#220
+b11 '
+b11 0
+b11 5
+b110 )
+b110 ,
+b110 1
+#230
+b10 '
+b10 0
+b10 5
+b111 )
+b111 ,
+b111 1
+#290

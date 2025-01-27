@@ -1,0 +1,40 @@
+$date
+	Sun Jan 26 17:27:59 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Mux_2to1_tb $end
+$var wire 32 ! y [31:0] $end
+$var reg 32 " a [31:0] $end
+$var reg 32 # b [31:0] $end
+$var reg 1 $ sel $end
+$scope module uut $end
+$var wire 32 % a [31:0] $end
+$var wire 32 & b [31:0] $end
+$var wire 1 $ sel $end
+$var wire 32 ' y [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+b1 &
+b0 %
+0$
+b1 #
+b0 "
+b0 !
+$end
+#10
+b1 !
+b1 '
+1$
+#20

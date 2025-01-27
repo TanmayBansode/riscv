@@ -1,0 +1,116 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000025cbaaa72e0 .scope module, "SignExtend_tb" "SignExtend_tb" 2 1;
+ .timescale 0 0;
+v0000025cbaab4920_0 .var "Imm", 31 0;
+v0000025cbaab41a0_0 .net "ImmExt", 31 0, L_0000025cbab645a0;  1 drivers
+v0000025cbaab42e0_0 .var "ImmSrc", 1 0;
+S_0000025cbaab6990 .scope module, "dut" "SignExtend" 2 7, 3 1 0, S_0000025cbaaa72e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "Imm";
+    .port_info 1 /INPUT 2 "ImmSrc";
+    .port_info 2 /OUTPUT 32 "ImmExt";
+v0000025cbaab6b20_0 .net "Imm", 31 0, v0000025cbaab4920_0;  1 drivers
+v0000025cbaab6bc0_0 .net "ImmExt", 31 0, L_0000025cbab645a0;  alias, 1 drivers
+v0000025cbaab6c60_0 .net "ImmSrc", 1 0, v0000025cbaab42e0_0;  1 drivers
+L_0000025cbab09a38 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0000025cbaab6d00_0 .net/2u *"_ivl_0", 1 0, L_0000025cbab09a38;  1 drivers
+v0000025cbab01840_0 .net *"_ivl_10", 31 0, L_0000025cbaab46a0;  1 drivers
+L_0000025cbab09a80 .functor BUFT 1, C4<01>, C4<0>, C4<0>, C4<0>;
+v0000025cbab018e0_0 .net/2u *"_ivl_12", 1 0, L_0000025cbab09a80;  1 drivers
+v0000025cbab01980_0 .net *"_ivl_14", 0 0, L_0000025cbaab4a60;  1 drivers
+v0000025cbaab3de0_0 .net *"_ivl_17", 0 0, L_0000025cbaab4740;  1 drivers
+v0000025cbaab4b00_0 .net *"_ivl_18", 19 0, L_0000025cbaab47e0;  1 drivers
+v0000025cbaab4560_0 .net *"_ivl_2", 0 0, L_0000025cbaab4380;  1 drivers
+v0000025cbaab4240_0 .net *"_ivl_21", 6 0, L_0000025cbaab3ca0;  1 drivers
+v0000025cbaab3fc0_0 .net *"_ivl_23", 4 0, L_0000025cbaab49c0;  1 drivers
+v0000025cbaab4060_0 .net *"_ivl_24", 31 0, L_0000025cbaab4ba0;  1 drivers
+L_0000025cbab09ac8 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000025cbaab3e80_0 .net/2u *"_ivl_26", 31 0, L_0000025cbab09ac8;  1 drivers
+v0000025cbaab3f20_0 .net *"_ivl_28", 31 0, L_0000025cbab63920;  1 drivers
+v0000025cbaab3d40_0 .net *"_ivl_5", 0 0, L_0000025cbaab4420;  1 drivers
+v0000025cbaab4600_0 .net *"_ivl_6", 19 0, L_0000025cbaab44c0;  1 drivers
+v0000025cbaab4100_0 .net *"_ivl_9", 11 0, L_0000025cbaab4880;  1 drivers
+L_0000025cbaab4380 .cmp/eq 2, v0000025cbaab42e0_0, L_0000025cbab09a38;
+L_0000025cbaab4420 .part v0000025cbaab4920_0, 31, 1;
+LS_0000025cbaab44c0_0_0 .concat [ 1 1 1 1], L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420;
+LS_0000025cbaab44c0_0_4 .concat [ 1 1 1 1], L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420;
+LS_0000025cbaab44c0_0_8 .concat [ 1 1 1 1], L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420;
+LS_0000025cbaab44c0_0_12 .concat [ 1 1 1 1], L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420;
+LS_0000025cbaab44c0_0_16 .concat [ 1 1 1 1], L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420, L_0000025cbaab4420;
+LS_0000025cbaab44c0_1_0 .concat [ 4 4 4 4], LS_0000025cbaab44c0_0_0, LS_0000025cbaab44c0_0_4, LS_0000025cbaab44c0_0_8, LS_0000025cbaab44c0_0_12;
+LS_0000025cbaab44c0_1_4 .concat [ 4 0 0 0], LS_0000025cbaab44c0_0_16;
+L_0000025cbaab44c0 .concat [ 16 4 0 0], LS_0000025cbaab44c0_1_0, LS_0000025cbaab44c0_1_4;
+L_0000025cbaab4880 .part v0000025cbaab4920_0, 20, 12;
+L_0000025cbaab46a0 .concat [ 12 20 0 0], L_0000025cbaab4880, L_0000025cbaab44c0;
+L_0000025cbaab4a60 .cmp/eq 2, v0000025cbaab42e0_0, L_0000025cbab09a80;
+L_0000025cbaab4740 .part v0000025cbaab4920_0, 31, 1;
+LS_0000025cbaab47e0_0_0 .concat [ 1 1 1 1], L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740;
+LS_0000025cbaab47e0_0_4 .concat [ 1 1 1 1], L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740;
+LS_0000025cbaab47e0_0_8 .concat [ 1 1 1 1], L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740;
+LS_0000025cbaab47e0_0_12 .concat [ 1 1 1 1], L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740;
+LS_0000025cbaab47e0_0_16 .concat [ 1 1 1 1], L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740, L_0000025cbaab4740;
+LS_0000025cbaab47e0_1_0 .concat [ 4 4 4 4], LS_0000025cbaab47e0_0_0, LS_0000025cbaab47e0_0_4, LS_0000025cbaab47e0_0_8, LS_0000025cbaab47e0_0_12;
+LS_0000025cbaab47e0_1_4 .concat [ 4 0 0 0], LS_0000025cbaab47e0_0_16;
+L_0000025cbaab47e0 .concat [ 16 4 0 0], LS_0000025cbaab47e0_1_0, LS_0000025cbaab47e0_1_4;
+L_0000025cbaab3ca0 .part v0000025cbaab4920_0, 25, 7;
+L_0000025cbaab49c0 .part v0000025cbaab4920_0, 7, 5;
+L_0000025cbaab4ba0 .concat [ 5 7 20 0], L_0000025cbaab49c0, L_0000025cbaab3ca0, L_0000025cbaab47e0;
+L_0000025cbab63920 .functor MUXZ 32, L_0000025cbab09ac8, L_0000025cbaab4ba0, L_0000025cbaab4a60, C4<>;
+L_0000025cbab645a0 .functor MUXZ 32, L_0000025cbab63920, L_0000025cbaab46a0, L_0000025cbaab4380, C4<>;
+    .scope S_0000025cbaaa72e0;
+T_0 ;
+    %vpi_call 2 10 "$display", "Time\011Imm\011\011\011ImmSrc\011ImmExt" {0 0 0};
+    %vpi_call 2 11 "$monitor", "%0dns\011%h\011%b\011%h", $time, v0000025cbaab4920_0, v0000025cbaab42e0_0, v0000025cbaab41a0_0 {0 0 0};
+    %pushi/vec4 841155362, 0, 32;
+    %store/vec4 v0000025cbaab4920_0, 0, 32;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0000025cbaab42e0_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 4149409792, 0, 32;
+    %store/vec4 v0000025cbaab4920_0, 0, 32;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0000025cbaab42e0_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 841155362, 0, 32;
+    %store/vec4 v0000025cbaab4920_0, 0, 32;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0000025cbaab42e0_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 4149409792, 0, 32;
+    %store/vec4 v0000025cbaab4920_0, 0, 32;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0000025cbaab42e0_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 2147483648, 0, 32;
+    %store/vec4 v0000025cbaab4920_0, 0, 32;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0000025cbaab42e0_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 15, 0, 32;
+    %store/vec4 v0000025cbaab4920_0, 0, 32;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0000025cbaab42e0_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000025cbaaa72e0;
+T_1 ;
+    %vpi_call 2 42 "$dumpfile", "SignExtend.vcd" {0 0 0};
+    %vpi_call 2 43 "$dumpvars", 32'sb00000000000000000000000000000000 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "SignExtend_tb.v";
+    ".\SignExtend.v";

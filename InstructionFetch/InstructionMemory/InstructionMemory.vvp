@@ -1,0 +1,86 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000023e391c9650 .scope module, "InstructionMemory_tb" "InstructionMemory_tb" 2 1;
+ .timescale 0 0;
+v0000023e391c6930_0 .var "addr", 31 0;
+v0000023e391c69d0_0 .var "clk", 0 0;
+v0000023e391c6a70_0 .net "instr", 31 0, L_0000023e392139f0;  1 drivers
+v0000023e391c6b10_0 .var "rst", 0 0;
+S_0000023e39204d70 .scope module, "uut" "InstructionMemory" 2 6, 3 1 0, S_0000023e391c9650;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "rst";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /INPUT 32 "addr";
+    .port_info 3 /OUTPUT 32 "instr";
+v0000023e39204f00_0 .net *"_ivl_1", 0 0, L_0000023e392138b0;  1 drivers
+L_0000023e3925cc28 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000023e391c9490_0 .net/2u *"_ivl_2", 31 0, L_0000023e3925cc28;  1 drivers
+v0000023e392163e0_0 .net *"_ivl_4", 31 0, L_0000023e39213950;  1 drivers
+v0000023e39216480_0 .net *"_ivl_7", 29 0, L_0000023e39213ef0;  1 drivers
+v0000023e39216520_0 .net "addr", 31 0, v0000023e391c6930_0;  1 drivers
+v0000023e392165c0_0 .net "clk", 0 0, v0000023e391c69d0_0;  1 drivers
+v0000023e39216660_0 .net "instr", 31 0, L_0000023e392139f0;  alias, 1 drivers
+v0000023e39216700 .array "mem", 0 1023, 31 0;
+v0000023e392167a0_0 .net "rst", 0 0, v0000023e391c6b10_0;  1 drivers
+L_0000023e392138b0 .reduce/nor v0000023e391c6b10_0;
+L_0000023e39213950 .array/port v0000023e39216700, L_0000023e39213ef0;
+L_0000023e39213ef0 .part v0000023e391c6930_0, 2, 30;
+L_0000023e392139f0 .functor MUXZ 32, L_0000023e39213950, L_0000023e3925cc28, L_0000023e392138b0, C4<>;
+    .scope S_0000023e39204d70;
+T_0 ;
+    %vpi_call 3 12 "$readmemh", "instructions.hex", v0000023e39216700 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000023e391c9650;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023e391c69d0_0, 0, 1;
+T_1.0 ;
+    %delay 5, 0;
+    %load/vec4 v0000023e391c69d0_0;
+    %inv;
+    %store/vec4 v0000023e391c69d0_0, 0, 1;
+    %jmp T_1.0;
+    %end;
+    .thread T_1;
+    .scope S_0000023e391c9650;
+T_2 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023e391c6b10_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000023e391c6930_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 4, 0, 32;
+    %store/vec4 v0000023e391c6930_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 32;
+    %store/vec4 v0000023e391c6930_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 12, 0, 32;
+    %store/vec4 v0000023e391c6930_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023e391c6b10_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0000023e391c9650;
+T_3 ;
+    %vpi_call 2 42 "$dumpfile", "InstructionMemory.vcd" {0 0 0};
+    %vpi_call 2 43 "$dumpvars", 32'sb00000000000000000000000000000000 {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "InstructionMemory_tb.v";
+    ".\InstructionMemory.v";
