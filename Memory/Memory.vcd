@@ -1,0 +1,182 @@
+$date
+	Wed Jan 29 20:58:25 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Memory_tb $end
+$var wire 1 ! ResultSrcW $end
+$var wire 1 " RegWriteW $end
+$var wire 32 # ReadDataW [31:0] $end
+$var wire 5 $ RDW [4:0] $end
+$var wire 32 % PCPlus4W [31:0] $end
+$var wire 32 & ALUResultW [31:0] $end
+$var reg 32 ' ALUResultM [31:0] $end
+$var reg 1 ( MemWriteM $end
+$var reg 32 ) PCPlus4M [31:0] $end
+$var reg 5 * RDM [4:0] $end
+$var reg 1 + RegWriteM $end
+$var reg 1 , ResultSrcM $end
+$var reg 32 - WriteDataM [31:0] $end
+$var reg 1 . clk $end
+$var reg 1 / rst $end
+$scope module Memory $end
+$var wire 32 0 ALUResultM [31:0] $end
+$var wire 32 1 ALUResultW [31:0] $end
+$var wire 1 ( MemWriteM $end
+$var wire 32 2 PCPlus4M [31:0] $end
+$var wire 32 3 PCPlus4W [31:0] $end
+$var wire 5 4 RDM [4:0] $end
+$var wire 5 5 RDW [4:0] $end
+$var wire 32 6 ReadDataW [31:0] $end
+$var wire 1 + RegWriteM $end
+$var wire 1 " RegWriteW $end
+$var wire 1 , ResultSrcM $end
+$var wire 1 ! ResultSrcW $end
+$var wire 32 7 WriteDataM [31:0] $end
+$var wire 1 . clk $end
+$var wire 1 / rst $end
+$var wire 32 8 ReadDataM [31:0] $end
+$var reg 32 9 ALUResultMReg [31:0] $end
+$var reg 32 : PCPlus4MReg [31:0] $end
+$var reg 5 ; RDMReg [4:0] $end
+$var reg 32 < ReadDataMReg [31:0] $end
+$var reg 1 = RegWriteMReg $end
+$var reg 1 > ResultSrcMReg $end
+$scope module dataMemory $end
+$var wire 32 ? address [31:0] $end
+$var wire 1 . clk $end
+$var wire 1 / rst $end
+$var wire 32 @ writeData [31:0] $end
+$var wire 1 ( writeEnable $end
+$var wire 32 A readData [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 A
+bx @
+bx ?
+0>
+0=
+b0 <
+b0 ;
+b0 :
+b0 9
+b0 8
+bx 7
+b0 6
+b0 5
+bx 4
+b0 3
+bx 2
+b0 1
+bx 0
+0/
+0.
+bx -
+x,
+x+
+bx *
+bx )
+x(
+bx '
+b0 &
+b0 %
+b0 $
+b0 #
+0"
+0!
+$end
+#5
+1.
+#10
+0.
+#15
+1.
+#20
+bx 8
+bx A
+0.
+b0 '
+b0 0
+b0 ?
+b0 -
+b0 7
+b0 @
+b0 )
+b0 2
+b0 *
+b0 4
+0,
+0(
+0+
+1/
+#25
+bx #
+bx 6
+bx <
+1.
+#30
+0.
+b1000 '
+b1000 0
+b1000 ?
+b100 )
+b100 2
+b1 *
+b1 4
+1,
+1+
+#35
+b1000 &
+b1000 1
+b1000 9
+b100 %
+b100 3
+b100 :
+b1 $
+b1 5
+b1 ;
+1!
+1>
+1"
+1=
+1.
+#40
+0.
+b1000000010000 -
+b1000000010000 7
+b1000000010000 @
+b11 '
+b11 0
+b11 ?
+#45
+b11 &
+b11 1
+b11 9
+1.
+#50
+0.
+1(
+#55
+b1000000010000 8
+b1000000010000 A
+1.
+#60
+0.
+#65
+b1000000010000 #
+b1000000010000 6
+b1000000010000 <
+1.
+#70
+0.
