@@ -1,6 +1,6 @@
 module Decode_tb();
 
-    reg clk, rst, RegWrite;
+    reg clk, rst, RegWriteW;
     reg [31:0] InstrD, PCD, PCPlus4D, ResultW;
     reg [4:0] RDW;
 
@@ -9,30 +9,35 @@ module Decode_tb();
     wire [31:0] RD1E, RD2E, ImmExtE, PCE, PCPlus4E;
     wire [4:0] RS1E, RS2E, RDE;
 
-    Decode dut(clk, rst, InstrD, PCD, PCPlus4D, RegWrite, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
+    Decode Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
 
     initial
-    begin
-        clk = 1'b0;
-        forever
-        begin
-            #5;
-            clk = ~clk;
+    begin   
+        clk = 0;
+        forever begin
+            #5 clk = ~clk;
         end
     end
 
     initial
-    begin 
-        rst = 1'b0;
-        #20;
-        rst = 1'b1;
-
+    begin
+        rst = 0;
+        #10 rst = 1;
+        RegWriteW = 1;
+        InstrD = 32'hA4A4A4A4;
+        PCD = 32'h00000008;
+        PCPlus4D = 32'h0000000C;
+        RDW = 5'h04;
+        ResultW = 32'h00000001;
+        #20
+        $finish;
     end
+
 
     initial
     begin
-        $dumpfile("Decode.vcd");
-        $dumpvars(0);
+    $dumpfile("Decode.vcd");
+    $dumpvars(0);
     end
 
 endmodule

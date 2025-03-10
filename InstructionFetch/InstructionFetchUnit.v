@@ -1,7 +1,8 @@
-`include "Counter.v"
-`include "InstructionMemory.v"
-`include "Mux_2to1.v"
-`include "Adder.v"
+// Imports done with respect to Pipelined.v
+`include "./InstructionFetch/Counter/Counter.v"
+`include "./InstructionFetch/InstructionMemory/InstructionMemory.v"
+`include "./General/Mux_2to1/Mux_2to1.v"
+`include "./General/Adder/Adder.v"
 
 module InstructionFetchUnit(clk, rst, PCSrcE, PCTargetE, InstrD, PCD, PCPlus4D);
 
@@ -14,7 +15,6 @@ module InstructionFetchUnit(clk, rst, PCSrcE, PCTargetE, InstrD, PCD, PCPlus4D);
     wire [31:0] PCFin, PCFout, PCPlus4;
     wire [31:0] InstrF;
 
-    // Pipeline registers
     reg [31:0] InstrFReg, PCFReg, PCPlus4FReg;
 
     Mux_2to1 MuxPC(
@@ -41,7 +41,7 @@ module InstructionFetchUnit(clk, rst, PCSrcE, PCTargetE, InstrD, PCD, PCPlus4D);
     Adder PCAdder(
         .a(PCFout),
         .b(32'h00000004),
-        .sum(PCPlus4)
+        .c(PCPlus4)
     );
 
     always@(posedge clk or negedge rst)

@@ -1,10 +1,11 @@
-`include "ControlUnit.v"
-`include "RegisterFile.v"
-`include "SignExtend.v"
+// Imports done with respect to Pipelined.v
+`include "./Decode/ControlUnit/ControlUnit.v"
+`include "./Decode/RegisterFile/RegisterFile.v"
+`include "./Decode/SignExtend/SignExtend.v"
 
 module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
 
-    input clk, rst, RegWrite;
+    input clk, rst, RegWriteW;
     input [31:0] InstrD, PCD, PCPlus4D, ResultW;
     input [4:0] RDW;
 
@@ -82,6 +83,7 @@ module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWrit
             PCPlus4DReg <= PCPlus4D;
             RS1DReg <= InstrD[19:15];
             RS2DReg <= InstrD[24:20];
+            RDDReg <= InstrD[11:7];
         end
     end
 

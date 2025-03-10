@@ -1,4 +1,5 @@
-`include "./DataMemory/DataMemory.v"
+// Imports done with respect to Pipelined.v
+`include "./Memory/DataMemory/DataMemory.v"
 
 module Memory(clk, rst, RegWriteM, MemWriteM, ResultSrcM, RDM, PCPlus4M, WriteDataM, ALUResultM, RegWriteW, ResultSrcW, RDW, PCPlus4W, ALUResultW, ReadDataW);
 

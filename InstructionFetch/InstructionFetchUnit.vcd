@@ -1,5 +1,5 @@
 $date
-	Sun Jan 26 23:55:36 2025
+	Sun Mar 09 13:20:43 2025
 $end
 $version
 	Icarus Verilog
@@ -51,7 +51,7 @@ $upscope $end
 $scope module PCAdder $end
 $var wire 32 : a [31:0] $end
 $var wire 32 ; b [31:0] $end
-$var wire 32 < sum [31:0] $end
+$var wire 32 < c [31:0] $end
 $upscope $end
 $upscope $end
 $upscope $end

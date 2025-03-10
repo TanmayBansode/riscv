@@ -1,5 +1,6 @@
-`include "ALUDecoder.v"
-`include "MainDecoder.v"
+// Imports done with respect to Pipelined.v
+`include "./Decode/MainDecoder/MainDecoder.v"
+`include "./Decode/ALUDecoder/ALUDecoder.v"
 
 module ControlUnit(Op, RegWrite, ImmSrc, ALUSrc, MemWrite, ResultSrc, Branch, funct3, funct7, ALUControl);
 
