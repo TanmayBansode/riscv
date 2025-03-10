@@ -4,12 +4,12 @@ module Decode_tb();
     reg [31:0] InstrD, PCD, PCPlus4D, ResultW;
     reg [4:0] RDW;
 
-    wire RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE;
+    wire RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, JumpE;
     wire [2:0] ALUControlE;
     wire [31:0] RD1E, RD2E, ImmExtE, PCE, PCPlus4E;
     wire [4:0] RS1E, RS2E, RDE;
 
-    Decode Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
+    Decode Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, JumpE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
 
     initial
     begin   

@@ -2,11 +2,12 @@
 `include "./Decode/MainDecoder/MainDecoder.v"
 `include "./Decode/ALUDecoder/ALUDecoder.v"
 
-module ControlUnit(Op, RegWrite, ImmSrc, ALUSrc, MemWrite, ResultSrc, Branch, funct3, funct7, ALUControl);
+module ControlUnit(Op, RegWrite, ImmSrc, ALUSrc, MemWrite, ResultSrc, Branch, Jump, funct3, funct7, ALUControl);
 
     input [6:0] Op, funct7;
     input [2:0] funct3;
-    output RegWrite, ALUSrc, MemWrite, ResultSrc, Branch;
+    output RegWrite, ALUSrc, MemWrite, Jump, Branch;
+    output [1:0] ResultSrc;
     output [1:0] ImmSrc;
     output [2:0] ALUControl;
 
@@ -19,6 +20,7 @@ module ControlUnit(Op, RegWrite, ImmSrc, ALUSrc, MemWrite, ResultSrc, Branch, fu
                 .MemWrite(MemWrite),
                 .ResultSrc(ResultSrc),
                 .Branch(Branch),
+                .Jump(Jump),
                 .ALUSrc(ALUSrc),
                 .ALUOp(ALUOp)
     );

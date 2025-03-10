@@ -3,23 +3,26 @@
 `include "./Decode/RegisterFile/RegisterFile.v"
 `include "./Decode/SignExtend/SignExtend.v"
 
-module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
+module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, JumpE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE);
 
     input clk, rst, RegWriteW;
     input [31:0] InstrD, PCD, PCPlus4D, ResultW;
     input [4:0] RDW;
 
-    output RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE;
+    output RegWriteE, ALUSrcE, MemWriteE, BranchE, JumpE;
+    output [1:0] ResultSrcE;
     output [2:0] ALUControlE;
     output [31:0] RD1E, RD2E, ImmExtE, PCE, PCPlus4E;
     output [4:0] RS1E, RS2E, RDE;
 
-    wire RegWriteD, ALUSrcD, MemWriteD, ResultSrcD, BranchD;
+    wire RegWriteD, ALUSrcD, MemWriteD, BranchD , JumpD;
+    wire [1:0] ResultSrcD;
     wire [2:0] ALUControlD;
     wire [1:0] ImmSrcD;
     wire [31:0] RD1D, RD2D, ImmExtD;
 
-    reg RegWriteDReg, ALUSrcDReg, MemWriteDReg, ResultSrcDReg, BranchDReg;
+    reg RegWriteDReg, ALUSrcDReg, MemWriteDReg, BranchDReg, JumpDReg;
+    reg [1:0] ResultSrcDReg;
     reg [2:0] ALUControlDReg;
     reg [31:0] RD1DReg, RD2DReg, ImmExtDReg, PCDReg, PCPlus4DReg;
     reg [4:0] RS1DReg, RS2DReg, RDDReg;
@@ -32,6 +35,7 @@ module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWrit
                             .MemWrite(MemWriteD),
                             .ResultSrc(ResultSrcD),
                             .Branch(BranchD),
+                            .Jump(JumpD),
                             .funct3(InstrD[14:12]),
                             .funct7(InstrD[31:25]),
                             .ALUControl(ALUControlD)
@@ -57,8 +61,9 @@ module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWrit
             RegWriteDReg <= 1'b0;
             ALUSrcDReg <= 1'b0;
             MemWriteDReg <= 1'b0;
-            ResultSrcDReg <= 1'b0;
+            ResultSrcDReg <= 2'b00;
             BranchDReg <= 1'b0;
+            JumpDReg <= 1'b0;
             ALUControlDReg <= 3'b000;
             RD1DReg <= 32'h00000000;
             RD2DReg <= 32'h00000000;
@@ -75,6 +80,7 @@ module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWrit
             MemWriteDReg <= MemWriteD;
             ResultSrcDReg <= ResultSrcD;
             BranchDReg <= BranchD;
+            JumpDReg <= JumpD;
             ALUControlDReg <= ALUControlD;
             RD1DReg <= RD1D;
             RD2DReg <= RD2D;
@@ -92,6 +98,7 @@ module Decode(clk,  rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWrit
     assign MemWriteE = MemWriteDReg;
     assign ResultSrcE = ResultSrcDReg;
     assign BranchE = BranchDReg;
+    assign JumpE = JumpDReg;
     assign ALUControlE = ALUControlDReg;
     assign RD1E = RD1DReg;
     assign RD2E = RD2DReg;

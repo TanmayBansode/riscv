@@ -3,17 +3,20 @@
 
 module Memory(clk, rst, RegWriteM, MemWriteM, ResultSrcM, RDM, PCPlus4M, WriteDataM, ALUResultM, RegWriteW, ResultSrcW, RDW, PCPlus4W, ALUResultW, ReadDataW);
 
-    input clk, rst, RegWriteM, MemWriteM, ResultSrcM;
+    input clk, rst, RegWriteM, MemWriteM; 
+    input [1:0] ResultSrcM;
     input [4:0] RDM;
     input [31:0] PCPlus4M, WriteDataM, ALUResultM;
 
-    output RegWriteW, ResultSrcW;
+    output RegWriteW; 
+    output [1:0] ResultSrcW;
     output [4:0] RDW;
     output [31:0] PCPlus4W, ALUResultW, ReadDataW;
 
     wire [31:0] ReadDataM;
 
-    reg RegWriteMReg, ResultSrcMReg;
+    reg RegWriteMReg; 
+    reg [1:0] ResultSrcMReg;
     reg [4:0] RDMReg;
     reg [31:0] PCPlus4MReg, ALUResultMReg, ReadDataMReg;
 
@@ -28,7 +31,7 @@ module Memory(clk, rst, RegWriteM, MemWriteM, ResultSrcM, RDM, PCPlus4M, WriteDa
     begin 
         if(!rst) begin
             RegWriteMReg <= 1'b0;
-            ResultSrcMReg <= 1'b0;
+            ResultSrcMReg <= 2'b00;
             RDMReg <= 5'b00000;
             PCPlus4MReg <= 32'h00000000;
             ALUResultMReg <= 32'h00000000;

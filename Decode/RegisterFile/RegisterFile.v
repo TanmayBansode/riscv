@@ -23,7 +23,7 @@ module RegisterFile(clk, rst, addr1, addr2, writeAddr, writeData, writeEnable, r
     begin
         for (i = 0; i < 32; i = i + 1)
         begin
-            registers[i] = i;
+            registers[i] = 32'h00000000;
         end
     end
 

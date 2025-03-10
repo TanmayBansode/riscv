@@ -22,7 +22,7 @@ module Pipelined_tb();
         rst = 1'b0;
         #20;
         rst = 1'b1;
-        #200;
+        #300;
         $finish;
     end
 

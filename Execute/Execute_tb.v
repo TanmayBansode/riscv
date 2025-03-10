@@ -1,7 +1,7 @@
 module Execute_tb();
 
     reg clk, rst;
-    reg RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE;
+    reg RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, JumpE;
     reg [2:0] ALUControlE;
     reg [31:0] RD1E, RD2E, ImmExtE, PCE, PCPlus4E;
     reg [4:0] RS1E, RS2E, RDE;
@@ -10,7 +10,7 @@ module Execute_tb();
     wire [31:0] ALUResultM, WriteDataM, PCPlus4M, PCTargetE;
     wire [4:0] RDM;
 
-    Execute dut(clk, rst, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE, RegWriteM, ResultSrcM, MemWriteM, PCSrcE, ALUResultM, WriteDataM, PCPlus4M, PCTargetE, RDM);
+    Execute dut(clk, rst, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, JumpE, ALUControlE, RD1E, RD2E, ImmExtE, PCE, PCPlus4E, RS1E, RS2E, RDE, RegWriteM, ResultSrcM, MemWriteM, PCSrcE, ALUResultM, WriteDataM, PCPlus4M, PCTargetE, RDM);
 
     initial
     begin
@@ -39,6 +39,7 @@ module Execute_tb();
         PCPlus4E = 32'h00000000;
         ALUSrcE = 1'b0;
         BranchE = 1'b0;
+        JumpE = 1'b0;
         RS1E = 5'h00;
         RS2E = 5'h00;
         RDE = 5'h00;
@@ -49,6 +50,7 @@ module Execute_tb();
         #10;
         //PCSrcE Test
         BranchE = 1'b0;
+        JumpE = 1'b1;
         ALUControlE = 3'b001;
         RD1E = 32'h0000000a;
         RD2E = 32'h0000000a;

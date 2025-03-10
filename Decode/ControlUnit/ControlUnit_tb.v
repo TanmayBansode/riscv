@@ -2,11 +2,11 @@ module ControlUnit_tb();
 
     reg [6:0] Op, funct7;
     reg [2:0] funct3;
-    wire RegWrite, ALUSrc,MemWrite,ResultSrc,Branch;
+    wire RegWrite, ALUSrc,MemWrite,ResultSrc,Branch, Jump;
     wire [1:0] ImmSrc;
     wire [2:0] ALUControl;
 
-    ControlUnit dut(Op,RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,Branch,funct3,funct7,ALUControl);
+    ControlUnit dut(Op,RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,Branch, Jump,funct3,funct7,ALUControl);
 
     initial
     begin
